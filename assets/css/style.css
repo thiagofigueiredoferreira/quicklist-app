@@ -1,0 +1,428 @@
+
+    /* ========================================================
+       DESIGN SYSTEM - TEMA BRASIL
+       ======================================================== */
+    :root {
+      /* Paleta do Brasil */
+      --br-green-primary: #008744;     /* Verde vibrante / Ação principal */
+      --br-green-hover: #006b36;       /* Verde escuro para hover */
+      --br-green-light: #e6f6ee;       /* Fundo suave de destaque verde */
+      
+      --br-blue-dark: #0f2b5c;         /* Azul escuro profundo / Títulos e Alerta */
+      --br-blue-primary: #0057b7;      /* Azul clássico */
+      --br-blue-subtle: #4169e1;       /* Azul secundário */
+      
+      --br-yellow-gold: #ffcc00;       /* Amarelo ouro para detalhes */
+      --br-yellow-badge: #ffe680;      /* Amarelo suave */
+      
+      --bg-page: #f4f6fa;              /* Fundo gelo neutro e moderno */
+      --bg-surface: #ffffff;           /* Superfície dos cards */
+      --border-subtle: #e2e8f0;        /* Linhas e bordas suaves */
+      --border-focus: #008744;         /* Borda ao focar no input */
+      
+      --text-title: #0f172a;           /* Preto quase puro para legibilidade */
+      --text-body: #334155;            /* Texto comum */
+      --text-muted: #94a3b8;           /* Textos secundários e ícones */
+      --text-completed: #94a3b8;       /* Riscado / Concluído */
+
+      --shadow-card: 0 2px 6px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);
+      --shadow-toast: 0 10px 25px -5px rgba(15, 43, 92, 0.25), 0 8px 10px -6px rgba(15, 43, 92, 0.2);
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+    }
+
+    /* Reset global */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-body);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 16px 100px;
+    }
+
+    /* Container central alinhado exatamente como no protótipo */
+    .app-container {
+      width: 100%;
+      max-width: 640px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ========================================================
+       1. CABEÇALHO / LOGO
+       ======================================================== */
+    .header-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 48px;
+    }
+
+    /* Ícone estilizado do Quicklist nas cores do Brasil */
+    .logo-icon {
+      display: flex;
+      flex-direction: column;
+      gap: 3.5px;
+      width: 24px;
+      height: 20px;
+      justify-content: center;
+    }
+
+    .logo-line {
+      height: 3.5px;
+      border-radius: 4px;
+    }
+
+    .logo-line.green {
+      width: 22px;
+      background-color: var(--br-green-primary);
+    }
+
+    .logo-line.yellow {
+      width: 14px;
+      background-color: var(--br-yellow-gold);
+    }
+
+    .logo-line.blue {
+      width: 18px;
+      background-color: var(--br-blue-primary);
+    }
+
+    .logo-text {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--br-blue-dark);
+    }
+
+    /* ========================================================
+       2. NAVEGAÇÃO & TÍTULO
+       ======================================================== */
+    .nav-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--br-green-primary);
+      text-decoration: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin-bottom: 12px;
+      width: fit-content;
+      transition: color 0.15s ease, transform 0.15s ease;
+      padding: 4px 0;
+    }
+
+    .nav-back:hover {
+      color: var(--br-green-hover);
+      transform: translateX(-3px);
+    }
+
+    .main-title {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--text-title);
+      letter-spacing: -0.6px;
+      margin-bottom: 32px;
+    }
+
+    /* ========================================================
+       3. FORMULÁRIO DE ENTRADA
+       ======================================================== */
+    .input-group-form {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 32px;
+      width: 100%;
+    }
+
+    .item-input {
+      flex: 1;
+      height: 52px;
+      padding: 0 18px;
+      background-color: var(--bg-surface);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      font-size: 15px;
+      color: var(--text-body);
+      outline: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+    }
+
+    .item-input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .item-input:focus {
+      border-color: var(--br-green-primary);
+      box-shadow: 0 0 0 3px rgba(0, 135, 68, 0.15);
+    }
+
+    .btn-add {
+      height: 52px;
+      padding: 0 24px;
+      background-color: var(--br-green-primary);
+      color: #ffffff;
+      border: none;
+      border-radius: var(--radius-md);
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 4px rgba(0, 135, 68, 0.25);
+    }
+
+    .btn-add:hover {
+      background-color: var(--br-green-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(0, 135, 68, 0.35);
+    }
+
+    .btn-add:active {
+      transform: translateY(0);
+    }
+
+    /* ========================================================
+       4. LISTA DE ITENS
+       ======================================================== */
+    .items-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .item-card {
+      background-color: var(--bg-surface);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      box-shadow: var(--shadow-card);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      transition: all 0.2s ease;
+    }
+
+    .item-card:hover {
+      border-color: #cbd5e1;
+      transform: translateY(-1px);
+    }
+
+    .item-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex: 1;
+      min-width: 0;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* Checkbox customizado circular moderno */
+    .custom-checkbox {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      border: 2px solid #cbd5e1;
+      background-color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .custom-checkbox svg {
+      opacity: 0;
+      transform: scale(0.5);
+      transition: all 0.2s ease;
+      color: #ffffff;
+    }
+
+    /* Estado marcado */
+    .item-card.completed .custom-checkbox {
+      background-color: var(--br-green-primary);
+      border-color: var(--br-green-primary);
+    }
+
+    .item-card.completed .custom-checkbox svg {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .item-name {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-title);
+      word-break: break-word;
+      transition: all 0.2s ease;
+    }
+
+    .item-card.completed .item-name {
+      color: var(--text-completed);
+      text-decoration: line-through;
+    }
+
+    /* Botão de remoção (Lixeira) */
+    .btn-delete {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      margin: -8px;
+      border-radius: var(--radius-sm);
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .btn-delete:hover {
+      color: #dc2626;
+      background-color: #fef2f2;
+    }
+
+    /* Mensagem caso a lista fique vazia */
+    .empty-state {
+      text-align: center;
+      padding: 40px 16px;
+      color: var(--text-muted);
+      font-size: 14px;
+      display: none;
+    }
+
+    /* ========================================================
+       5. BANNER / TOAST DE ALERTA NO RODAPÉ
+       ======================================================== */
+    .toast-alert {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(120px);
+      width: calc(100% - 32px);
+      max-width: 640px;
+      
+      /* Visual Brasil: Azul marinho de destaque com acento amarelo */
+      background-color: var(--br-blue-dark);
+      border-left: 5px solid var(--br-yellow-gold);
+      color: #ffffff;
+      
+      padding: 14px 18px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: var(--shadow-toast);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+      z-index: 999;
+    }
+
+    .toast-alert.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .toast-content {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .toast-icon-circle {
+      width: 22px;
+      height: 22px;
+      border-radius: var(--radius-full);
+      background-color: var(--br-yellow-gold);
+      color: var(--br-blue-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+
+    .toast-close-btn {
+      background: none;
+      border: none;
+      color: rgba(255, 255, 255, 0.7);
+      cursor: pointer;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+      transition: all 0.15s ease;
+    }
+
+    .toast-close-btn:hover {
+      color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* ========================================================
+       RESPONSIVIDADE (MOBILE FIRST ADAPTATIVO)
+       ======================================================== */
+    @media (max-width: 480px) {
+      body {
+        padding: 24px 12px 90px;
+      }
+
+      .header-logo {
+        margin-bottom: 32px;
+      }
+
+      .main-title {
+        font-size: 22px;
+        margin-bottom: 24px;
+      }
+
+      .input-group-form {
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 24px;
+      }
+
+      .item-input, .btn-add {
+        width: 100%;
+        height: 48px;
+      }
+
+      .toast-alert {
+        bottom: 16px;
+        padding: 12px 14px;
+      }
+    }
+  

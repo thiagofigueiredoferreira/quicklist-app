@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quicklist - Compras da Semana</title>
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+  
+</head>
+<body>
+
+  <main class="app-container">
+    
+    <!-- Topo: Marca / Logo -->
+    <header class="header-logo">
+      <div class="logo-icon" aria-hidden="true">
+        <span class="logo-line green"></span>
+        <span class="logo-line yellow"></span>
+        <span class="logo-line blue"></span>
+      </div>
+      <h1 class="logo-text">quicklist</h1>
+    </header>
+
+    <!-- Botão de Voltar -->
+    <button type="button" class="nav-back" onclick="handleGoBack()" aria-label="Voltar para a página anterior">
+      ← Voltar
+    </button>
+
+    <!-- Título da Seção -->
+    <h2 class="main-title">Compras da semana</h2>
+
+    <!-- Formulário para adicionar novos itens -->
+    <form id="item-form" class="input-group-form" autocomplete="off">
+      <input 
+        type="text" 
+        id="item-input" 
+        class="item-input" 
+        placeholder="Adicione um novo item"
+        maxlength="60"
+        aria-label="Nome do item da compra"
+      />
+      <button type="submit" class="btn-add">Adicionar item</button>
+    </form>
+
+    <!-- Lista de Itens -->
+    <ul id="items-list" class="items-list" aria-label="Lista de compras da semana">
+      <!-- Elementos criados dinamicamente pelo JavaScript -->
+    </ul>
+
+    <!-- Mensagem de lista vazia -->
+    <div id="empty-state" class="empty-state">
+      Sua lista está vazia. Adicione o primeiro item acima!
+    </div>
+
+  </main>
+
+  <!-- Banner / Alerta de feedback inferior -->
+  <aside id="toast-alert" class="toast-alert" role="status" aria-live="polite">
+    <div class="toast-content">
+      <div class="toast-icon-circle">!</div>
+      <span>O item foi removido da lista</span>
+    </div>
+    <button type="button" id="toast-close" class="toast-close-btn" aria-label="Fechar notificação">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </aside>
+  <script src="assets/js/script.js"></script>
+  
+</body>
+</html>
